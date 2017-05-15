@@ -1,0 +1,21 @@
+machine:
+  timezone:
+    Europe/Warsaw
+  python:
+    version: 3.5.2
+
+  environment:
+    DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/circle_test
+
+dependencies:
+  pre:
+   - pip install pytest
+   - pip install psycopg2
+
+database:
+  override:
+    - psql -U ubuntu -d circle_test -a -f schema.sql
+
+test:
+  override:
+    - py.test --junitxml=$CIRCLE_TEST_REPORTS/output.xml
