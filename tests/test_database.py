@@ -24,7 +24,6 @@ def db():
 
 
 def clean_and_populate_table(con, cur):
-    con, cur = db
     cur.execute("SELECT TRUE FROM trains.gtfs LIMIT 1")
     try:
         cur.fetchone()[0]
