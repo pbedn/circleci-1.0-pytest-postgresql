@@ -5,7 +5,7 @@ from app import my_app
 from app.connect_to_db import connect_to_db
 
 
-DATABASE = os.environ("DB_NAME")
+DATABASE = os.environ["DB_NAME"]
 
 input_data = [('000068', True),
               ('000069', True),
