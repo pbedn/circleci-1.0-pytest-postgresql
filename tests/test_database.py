@@ -41,7 +41,7 @@ def clean_and_populate_table(con, cur):
 
 
 def select_and_fetch_query(cur):
-    query = '''SELECT route,active FROM trains.gtfs ORDER BY file_name ASC'''
+    query = '''SELECT route,active FROM trains.gtfs ORDER BY route ASC'''
     cur.execute(query)
     return cur.fetchall()
 
